@@ -12,6 +12,10 @@
     "ts"
   ],
   "author": "tangseng <348312378@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tangseng/vue-cli-plugin-ts.git"
+  },
   "license": "ISC",
   "dependencies": {
     "@vue/cli-shared-utils": "^3.0.0",
