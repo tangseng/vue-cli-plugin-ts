@@ -37,7 +37,6 @@ module.exports = (api, { tsPick = [] }) => {
   })
 
   api.render('./template/base')
-  selectUxcool && api.render('./template/uxcool')
   selectVueMeta && api.render('./template/vue-meta')
   selectPortalVue && api.render('./template/portal-vue')
   selectVCharts && api.render('./template/v-charts')
@@ -66,7 +65,7 @@ module.exports = (api, { tsPick = [] }) => {
     files['vue.config.js'] = api.genJSConfig(config)
   })
 
-  api.postProcessFiles(files => {
+  api.postProcessFiles(() => {
 
   })
 
