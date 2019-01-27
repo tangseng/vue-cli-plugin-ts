@@ -1,6 +1,6 @@
 {
   "name": "@tangseng/vue-cli-plugin-ts",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "vue-cli 3 plugin to add ts",
   "main": "index.js",
   "scripts": {
