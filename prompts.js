@@ -26,11 +26,6 @@ module.exports = [
         name: 'add v-charts',
         value: 'v-charts',
         checked: true
-      },
-      {
-        name: 'add demo',
-        value: 'demo',
-        checked: true
       }
     ]
   }

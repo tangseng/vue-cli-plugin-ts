@@ -4,35 +4,21 @@ module.exports = (api, { tsPick = [] }) => {
   const selectVueMeta = tsPick.includes('vue-meta')
   const selectPortalVue = tsPick.includes('portal-vue')
   const selectVCharts = tsPick.includes('v-charts')
-  const selectDemo = tsPick.includes('demo')
-
-  ;[
-    'src/router.js',
-    'src/store.js',
-    'src/views/About.vue',
-    'src/views/Home.vue',
-    'src/components/HelloWorld.vue',
-    'tests/unit/HelloWorld.spec.js'
-  ].forEach(file => {
-    const filePath = api.resolve(file)
-    if (fs.existsSync(filePath)) {
-      fs.remove(filePath)
-    }
-  })
 
   api.extendPackage({
     dependencies: {
-      ...(selectVueMeta ? {'vue-meta': '^1.5.2'} : {}),
-      ...(selectPortalVue ? {'portal-vue': '^1.3.0'} : {}),
-      ...(selectVCharts ? {'v-charts': '^1.17.9', 'echarts': '^4.1.0'} : {}),
+      ...(selectVueMeta ? {'vue-meta': '^1.5.8'} : {}),
+      ...(selectPortalVue ? {'portal-vue': '^1.5.1'} : {}),
+      ...(selectVCharts ? {'v-charts': '^1.19.0', 'echarts': '^4.1.0'} : {}),
+      '@tangseng/vue-x': '1.0.2',
       'axios': '^0.18.0',
-      'vue-router': '^3.0.1',
-      'vuex': '^3.0.1'
+      'vue-router': '^3.0.2',
+      'vuex': '^3.1.0'
     },
     devDependencies: {
-      'postcss-import': '^12.0.0',
-      'postcss-preset-env': '^5.3.0',
-      'postcss-url': '^7.3.2'
+      'postcss-import': '^12.0.1',
+      'postcss-preset-env': '^6.5.0',
+      'postcss-url': '^8.0.0'
     }
   })
 
@@ -40,7 +26,6 @@ module.exports = (api, { tsPick = [] }) => {
   selectVueMeta && api.render('./template/vue-meta')
   selectPortalVue && api.render('./template/portal-vue')
   selectVCharts && api.render('./template/v-charts')
-  selectDemo && api.render('./template/demo')
 
   api.render(files => {
     let config = {
